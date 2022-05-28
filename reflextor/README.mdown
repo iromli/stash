@@ -1,0 +1,43 @@
+# Reflextor
+
+Reflextor is a generator to extract PHP classes, interfaces, and functions, etc using Reflection into a bunch of JSON files.
+
+## Requirements
+
+* PHP 5.3
+
+## Usage
+
+Make sure you put `bin/reflextor` in your `PATH`.
+
+    reflextor
+
+Invoking the command without any parameter will generate a bundle with default name and output root.
+
+	| $HOME
+      | .reflextor
+        | php_internal.bundle
+          | constants.json
+          | classes.json
+          | interfaces.json
+          | functions.json
+
+How to customize the name and output root of a bundle? Simply pass 2 parameters to reflextor executable.
+
+	reflextor default ~/dev
+
+where `default` is the bundle name and `~/dev` is the root path to store the generated bundle.
+
+Given above snippet, Reflextor will generate the hierarchy for you:
+
+    | $HOME
+      | dev
+        | default.bundle
+          | constants.json
+          | classes.json
+          | interfaces.json
+          | functions.json
+
+## Copyright
+
+Reflextor is released under MIT license. See `LICENSE.txt` for details.
