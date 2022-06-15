@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>{{ _('Hello') }}</h1>
+    <p>
+        {{ _("This is a test for i18n and l10n demo.") }}<br>
+        {% autoescape false %}
+            {{ _("You can switch to %(bahasa)s or %(english)s.", bahasa='<a href="%s">Bahasa</a>' % url_for("index", lang="id"), english='<a href="%s">English</a>' % url_for("index", lang="en")) }}<br>
+        {% endautoescape %}
+
+        {% if not current_user.is_authenticated() %}
+            {% autoescape false %}
+                {{ _('You can use user-preferred language by %(log)s to our system.', log='<a href="%s">%s</a>' % (url_for("login"), _("login"))) }}<br>
+            {% endautoescape %}
+        {% endif %}
+    </p>
+{% endblock %}

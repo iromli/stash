@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+    <form method="post">
+        <p>{{ _('Hint: username "demo" and password "demo1234".') }}</p>
+        <div><input type="text" name="username" placeholder="{{ _('username') }}"></div>
+        <div><input type="password" name="password" placeholder="{{ _('password') }}"></div>
+        <button>{{ _('Login') }}</button>
+    </form>
+{% endblock %}
